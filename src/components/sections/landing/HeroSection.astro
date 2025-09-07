@@ -1,0 +1,114 @@
+---
+import { Image } from "astro:assets";
+import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
+import ReviewComponent from "@components/ui/blocks/ReviewComponent.astro";
+
+interface Props {
+  title: string;
+  subTitle?: string;
+  primaryBtn?: string;
+  primaryBtnURL?: string;
+  secondaryBtn?: string;
+  secondaryBtnURL?: string;
+  withReview?: boolean;
+  avatars?: Array<string>;
+  starCount?: number;
+  rating?: string;
+  reviews?: string;
+  /**
+   * Puede ser un import de imagen (recomendado) o una string (p. ej., /imagenes/hero.png en public/)
+   */
+  src?: any;
+  alt?: string;
+  /**
+   * Solo necesarias si `src` es string (public/…): evitan CLS y satisfacen el validador
+   */
+  width?: number;
+  height?: number;
+}
+
+const {
+  title,
+  subTitle,
+  primaryBtn,
+  primaryBtnURL,
+  secondaryBtn,
+  secondaryBtnURL,
+  withReview,
+  avatars,
+  starCount,
+  rating,
+  reviews,
+  src,
+  alt,
+  width,
+  height,
+} = Astro.props;
+
+const isImported = src && typeof src !== "string";
+---
+
+<section
+  class="mx-auto grid max-w-[85rem] gap-4 px-4 py-14 sm:px-6 md:grid-cols-2 md:items-center md:gap-8 lg:px-8 2xl:max-w-full"
+>
+  <div>
+    <h1
+      class="block text-balance text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 sm:text-4xl lg:text-6xl lg:leading-tight"
+    >
+      <Fragment set:html={title} />
+    </h1>
+
+    {subTitle && (
+      <p class="mt-3 text-pretty text-lg leading-relaxed text-neutral-700 dark:text-neutral-400 lg:w-4/5">
+        {subTitle}
+      </p>
+    )}
+
+    <div class="mt-7 grid w-full gap-3 sm:inline-flex">
+      {primaryBtn && <PrimaryCTA title={primaryBtn} url={primaryBtnURL} />}
+      {secondaryBtn && <SecondaryCTA title={secondaryBtn} url={secondaryBtnURL} />}
+    </div>
+
+    {withReview ? (
+      <ReviewComponent
+        avatars={avatars}
+        starCount={starCount}
+        rating={rating}
+        reviews={reviews}
+      />
+    ) : (
+      ""
+    )}
+  </div>
+
+  <div class="flex w-full">
+    <div class="top-12 overflow-hidden">
+      {src && alt && (
+        isImported ? (
+          /* Import local (Astro infiere dimensiones) */
+          <Image
+            src={src}
+            alt={alt}
+            class="h-full w-full scale-100 object-cover object-center"
+            draggable={"false"}
+            loading={"eager"}
+            format={"avif"}
+          />
+        ) : (
+          /* Ruta pública o URL string: requiere width/height */
+          <img
+            src={src}
+            alt={alt}
+            width={width}
+            height={height}
+            class="h-full w-full scale-100 object-cover object-center"
+            draggable="false"
+            loading="eager"
+            decoding="async"
+          />
+        )
+      )}
+    </div>
+  </div>
+</section>

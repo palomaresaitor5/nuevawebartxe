@@ -1,0 +1,46 @@
+---
+// Import the necessary components
+import MainLayout from "@/layouts/MainLayout.astro";
+import ContactSection from "@components/sections/misc/ContactSection.astro";
+import { SITE } from "@data/constants";
+
+const pageTitle: string = `Contacto | ${SITE.title}`;
+const metaDescription =
+  "¿Tienes dudas o quieres hablar de tu proyecto? Escríbenos y diseñaremos contigo una solución web moderna, rápida y optimizada para SEO.";
+const ogTitle = `Contacto | ${SITE.title}`;
+---
+
+<MainLayout
+  title={pageTitle}
+  customDescription={metaDescription}
+  customOgTitle={ogTitle}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://artxeweb.com/contacto",
+    url: "https://artxeweb.com/contacto",
+    name: `Contacto | ${SITE.title}`,
+    description:
+      "¿Tienes dudas o quieres hablar de tu proyecto? Escríbenos y diseñaremos contigo una solución web moderna, rápida y optimizada para SEO.",
+    isPartOf: {
+      "@type": "WebSite",
+      url: "https://artxeweb.com",
+      name: SITE.title,
+      description:
+        "Artxe Web: diseño y desarrollo de páginas web modernas, rápidas y optimizadas para SEO.",
+    },
+    inLanguage: "es",
+  }}
+>
+  <ContactSection />
+
+  <!-- Imagen horizontal debajo del formulario de contacto -->
+  <div class="mt-8 flex justify-center">
+    <img
+      src="/imagenes/contacto-disenador-web.webp"
+      alt="Diseñador web trabajando en un proyecto"
+      class="w-full max-w-5xl rounded-xl shadow-lg"
+      loading="lazy"
+    />
+  </div>
+</MainLayout>

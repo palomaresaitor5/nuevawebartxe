@@ -1,0 +1,38 @@
+{
+  "title": "Precios Simples y Transparentes",
+  "subTitle": "Impulsa la eficiencia con los planes claros y orientados al valor de Artxe Web.",
+  "badge": "Mejor valor",
+  "thirdOption": "¿Soluciones Empresariales?",
+  "btnText": "Obtener Presupuesto Personalizado",
+
+  "starterKit": {
+    "name": "Web Básica",
+    "description": "Perfecta para pequeños negocios",
+    "price": "599",
+    "cents": ".00",
+    "billingFrequency": "EUR / proyecto",
+    "features": [
+      "Diseño responsive",
+      "Optimización SEO básica",
+      "Soporte estándar"
+    ],
+    "purchaseBtnTitle": "Solicitar Web Básica",
+    "purchaseLink": "#"
+  },
+
+  "professionalToolbox": {
+    "name": "Web Profesional",
+    "description": "Ideal para empresas en crecimiento",
+    "price": "1299",
+    "cents": ".00",
+    "billingFrequency": "EUR / proyecto",
+    "features": [
+      "Diseño personalizado",
+      "SEO avanzado",
+      "Contenido exclusivo",
+      "Soporte prioritario"
+    ],
+    "purchaseBtnTitle": "Solicitar Web Profesional",
+    "purchaseLink": "#"
+  }
+}
