@@ -11,14 +11,9 @@ import PricingSection from "@components/sections/pricing/PricingSection.astro";
 import FAQ from "@components/sections/misc/FAQ.astro";
 import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro";
 
-// ❌ import heroImage from "@images/hero-image.avif";  // ya no se usa
 import faqs from "@data/faqs.json";
 import features from "@data/features.json";
 import pricing from "@data/pricing.json";
-import featureImage from "@images/features-image.avif";
-import construction from "@images/construction-image.avif";
-import tools from "@images/automated-tools.avif";
-import dashboard from "@images/dashboard-image.avif";
 import { partnersData } from "@/data_files/constants";
 
 
@@ -79,7 +74,7 @@ const avatarSrcs: Array<string> = [
         content:
           "Creamos páginas web modernas, rápidas y fáciles de gestionar, adaptadas a móviles y optimizadas para SEO.",
         svg: "tools",
-        src: tools,
+        src: "/imagenes/x.jpg",
         alt: "Ejemplo de diseño web en laptop",
         first: true,
       },
@@ -88,7 +83,7 @@ const avatarSrcs: Array<string> = [
         content:
           "Mejora tu visibilidad en Google con nuestras estrategias de SEO. Aumenta visitas y clientes potenciales.",
         svg: "dashboard",
-        src: dashboard,
+        src: "/imagenes/x.jpg",
         alt: "Gráfico de rendimiento en buscadores",
         second: true,
       },
@@ -97,7 +92,7 @@ const avatarSrcs: Array<string> = [
         content:
           "Gestionamos y optimizamos tus perfiles en Instagram, TikTok, Facebook o YouTube. También diseñamos logotipos y material gráfico.",
         svg: "house",
-        src: construction,
+        src: "/imagenes/x.jpg",
         alt: "Diseño gráfico y redes sociales",
       },
     ]}

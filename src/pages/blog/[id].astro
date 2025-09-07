@@ -6,7 +6,6 @@ import CardRelated from "@components/ui/cards/CardRelated.astro";
 import Bookmark from "@components/ui/buttons/Bookmark.astro";
 import SocialShare from "@components/ui/buttons/SocialShare.astro";
 import PostFeedback from "@components/ui/feedback/PostFeedback.astro";
-import { Image } from "astro:assets";
 import { capitalize, formatDate } from "@utils/utils";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
@@ -120,12 +119,15 @@ const ogTitle = `${post.data.title} | Blog | ${SITE.title}`;
                 <p class="text-lg text-pretty text-neutral-700 dark:text-neutral-300">
                   {content}
                 </p>
-                <Image
+                <img
                   class="w-full rounded-xl object-cover"
                   src={post.data.cardImage}
                   alt={post.data.cardImageAlt}
-                  draggable={"false"}
-                  format={"avif"}
+                  draggable="false"
+                  width="800"
+                  height="400"
+                  loading="lazy"
+                  decoding="async"
                 />
               </>
             ) : (

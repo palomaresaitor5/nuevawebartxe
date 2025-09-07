@@ -1,6 +1,5 @@
 ---
 // Import necessary modules and utilities
-import { Image } from "astro:assets";
 import Icon from "@components/ui/icons/Icon.astro";
 import type { CollectionEntry } from "astro:content";
 
@@ -22,12 +21,15 @@ const imageClass =
   class="group relative flex h-48 items-end overflow-hidden rounded-xl shadow-lg outline-hidden ring-zinc-500 focus-visible:ring-3 dark:ring-zinc-200 dark:focus:outline-hidden md:h-80"
 >
   <!-- The product's main image -->
-  <Image
+  <img
     src={product.data.main.imgCard}
     alt={product.data.main.imgAlt}
-    draggable={"false"}
+    draggable="false"
     class={imageClass}
-    format={"avif"}
+    width="400"
+    height="320"
+    loading="lazy"
+    decoding="async"
   />
   <!-- An overlay gradient that sits on top of the product image-->
   <div

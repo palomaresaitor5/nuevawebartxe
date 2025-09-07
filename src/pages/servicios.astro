@@ -6,15 +6,6 @@ import LeftSection from "@components/ui/blocks/LeftSection.astro";
 import RightSection from "@components/ui/blocks/RightSection.astro";
 import FeaturesStats from "@components/sections/features/FeaturesStats.astro";
 
-// Import necessary images
-import blueprints from "@images/blueprints-image.avif";
-import personWorking from "@images/person-working.avif";
-import beforeAfter from "@images/before-after.avif";
-import constructionWorkers from "@images/construction-workers.avif";
-import aerialView from "@images/aerial-view.avif";
-import usingTools from "@images/using-tools.avif";
-import progressBuilding from "@images/progress-building.avif";
-import underConstruction from "@images/under-construction.avif";
 import { SITE } from "@data/constants";
 
 interface Article {
@@ -40,9 +31,9 @@ const articles: Article[] = [
     subTitle:
       "¿Tu web no convierte o no posiciona? En Artxe Web te guiamos con una consultoría clara y accionable: arquitectura de la información, SEO on-page, rendimiento, accesibilidad y diseño centrado en el usuario. Obtén un plan priorizado para mejorar visibilidad y conversiones.",
     single: false,
-    imgOne: blueprints,
+    imgOne: "/imagenes/x.jpg",
     imgOneAlt: "Wireframes y plan de arquitectura web en tablet.",
-    imgTwo: personWorking,
+    imgTwo: "/imagenes/x.jpg",
     imgTwoAlt: "Profesional de diseño web trabajando en oficina.",
   },
   {
@@ -50,7 +41,7 @@ const articles: Article[] = [
     title: "Del diseño al sitio web real",
     subTitle:
       "Transformamos tus ideas en una web moderna, rápida y responsive con Astro/Tailwind. Pasamos de prototipos a componentes reales, cuidando tipografía, grid y microinteracciones para una experiencia impecable en móvil y escritorio.",
-    img: beforeAfter,
+    img: "/imagenes/x.jpg",
     imgAlt: "Comparativa antes y después de un rediseño web.",
     btnExists: true,
     btnTitle: "Ver cómo trabajamos",
@@ -62,9 +53,9 @@ const articles: Article[] = [
     subTitle:
       "Nos encargamos del ciclo completo: discovery, diseño, desarrollo, contenidos, SEO técnico y publicación. Calendario claro, entregables por fases y comunicación continua para llegar a tiempo y con calidad.",
     single: false,
-    imgOne: constructionWorkers,
+    imgOne: "/imagenes/x.jpg",
     imgOneAlt: "Equipo coordinando un proyecto digital.",
-    imgTwo: aerialView,
+    imgTwo: "/imagenes/x.jpg",
     imgTwoAlt: "Vista general de un proyecto digital en curso.",
   },
   {
@@ -72,7 +63,7 @@ const articles: Article[] = [
     title: "Mantenimiento, rendimiento y seguridad",
     subTitle:
       "Tu web necesita cuidados: actualizaciones, copias de seguridad, monitorización y mejoras de Core Web Vitals. Ofrecemos planes de soporte para que tu sitio se mantenga veloz, seguro y siempre operativo.",
-    img: usingTools,
+    img: "/imagenes/x.jpg",
     imgAlt:
       "Optimización de rendimiento y mantenimiento de un sitio web.",
   },
@@ -82,9 +73,9 @@ const articles: Article[] = [
     subTitle:
       "E-commerce, landings de alto rendimiento, multilenguaje, integraciones con CRM o analítica avanzada. Diseñamos soluciones personalizadas que impulsan marca, tráfico y ventas.",
     single: false,
-    imgOne: progressBuilding,
+    imgOne: "/imagenes/x.jpg",
     imgOneAlt: "Evolución de un proyecto digital a medida.",
-    imgTwo: underConstruction,
+    imgTwo: "/imagenes/x.jpg",
     imgTwoAlt: "Módulos en desarrollo para una web personalizada.",
     btnExists: true,
     btnTitle: "Solicitar propuesta",
