@@ -1,7 +1,7 @@
 ---
 title: "El Futuro de la Tecnología Web"
 description: "Explora el papel pionero de Artxe Web en la revolución del desarrollo web a través de tecnología avanzada y soluciones innovadoras."
-cardImage: "/imagenes/insight-1.jpg"
+cardImage: "/imagenes/x.jpg"
 cardImageAlt: "Vista superior de herramientas de desarrollo web"
 ---
 
