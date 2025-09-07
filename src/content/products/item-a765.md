@@ -5,7 +5,7 @@ main:
   id: 2
   content: |
     Presentamos el Conjunto de Tornillos Surtidos SF-AB A765 – la solución definitiva para tus necesidades de fijación con tornillos. Este conjunto completo incluye una amplia variedad de tornillos meticulosamente seleccionados para abordar varios proyectos con facilidad y precisión.
-  imgCard: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop"
+  imgCard: "https://artxeweb.com/media/files/disenador-web.svg"
   imgMain: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=600&fit=crop"
   imgAlt: "Cajas de muestra de conjunto de tornillos surtidos"
 tabs:
