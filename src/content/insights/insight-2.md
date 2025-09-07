@@ -1,7 +1,7 @@
 ---
 title: "La Importancia de la Colaboración"
 description: "Explora cómo la colaboración es central en el enfoque de desarrollo de Artxe Web, impulsando comunicación efectiva y trabajo en equipo para lograr resultados excepcionales."
-cardImage: "/imagenes/x.jpg"
+cardImage: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&h=400&fit=crop"
 cardImageAlt: "Vista superior de herramientas de desarrollo colaborativo"
 ---
 

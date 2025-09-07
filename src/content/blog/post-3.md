@@ -3,10 +3,10 @@ title: "Simplifica la Adquisición y Mantente Dentro del Presupuesto con Artxe W
 description: "Herramientas asequibles y duraderas para proyectos de desarrollo eficientes"
 author: "Olga Zabegina"
 role: "Gerente de Marketing Estratégico"
-authorImage: "/imagenes/x.jpg"
+authorImage: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face"
 authorImageAlt: "Descripción del Avatar"
 pubDate: 2024-02-18
-cardImage: "/imagenes/x.jpg"
+cardImage: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&h=400&fit=crop"
 cardImageAlt: "Vista lateral de trabajador usando herramientas digitales"
 readTime: 3
 tags: ["adquisición", "asequible", "eficiencia"]

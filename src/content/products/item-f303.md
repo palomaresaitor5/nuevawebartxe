@@ -5,8 +5,8 @@ main:
   id: 4
   content: |
     Presentamos los Pernos Hexagonales SF-FN F303 – la elección perfecta para aplicaciones de fijación de trabajo pesado. Elaborados con precisión y durabilidad en mente, estos pernos hexagonales proporcionan la fuerza y confiabilidad que necesitas para tus proyectos más duros.
-  imgCard: "/imagenes/x.jpg"
-  imgMain: "/imagenes/x.jpg"
+  imgCard: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop"
+  imgMain: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=600&fit=crop"
   imgAlt: "Cajas de muestra de pernos hexagonales"
 tabs:
   - id: "tabs-with-card-item-1"
@@ -50,6 +50,6 @@ specificationsRight:
   - title: "Aplicaciones"
     subTitle: "Ideal para uso en construcción, maquinaria, automotriz y otras aplicaciones de trabajo pesado que demandan fijación fuerte y confiable."
 blueprints:
-  first: "/imagenes/x.jpg"
-  second: "/imagenes/x.jpg"  
+  first: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&h=400&fit=crop"
+  second: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&h=400&fit=crop"
 ---

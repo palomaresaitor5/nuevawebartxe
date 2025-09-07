@@ -44,7 +44,7 @@ export const servicesData = [
 
 export const successStoriesData = [
   {
-    image: "/imagenes/x.jpg",
+    image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=128&h=128&fit=crop",
     alt: "Image Description",
     description:
       "Ve cómo Artxe Web ha empoderado a empresas de todos los tamaños para lograr resultados excepcionales.",
