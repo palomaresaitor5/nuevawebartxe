@@ -5,8 +5,8 @@ main:
   id: 1
   content: |
     Presentamos el SF-TB T845 – tu solución preferida para fijación de precisión en maquinaria y equipos. Este conjunto completo de tornillos de máquina está meticulosamente elaborado para cumplir con las demandas estrictas de aplicaciones industriales, asegurando fijación segura y confiable.
-  imgCard: "/imagenes/product-image-1.jpg"
-  imgMain: "/imagenes/product-image-main-1.jpg"
+  imgCard: "/imagenes/x.jpg"
+  imgMain: "/imagenes/x.jpg"
   imgAlt: "Cajas de muestra de conjunto de tornillos de máquina"
 tabs:
   - id: "tabs-with-card-item-1"
@@ -50,6 +50,6 @@ specificationsRight:
   - title: "Aplicaciones"
     subTitle: "Ideal para uso en una amplia gama de maquinaria industrial, equipos y ensambles que demandan fijación precisa y segura."
 blueprints:
-  first: "/imagenes/blueprint-1.jpg"
-  second: "/imagenes/blueprint-2.jpg"   
+  first: "/imagenes/x.jpg"
+  second: "/imagenes/x.jpg"   
 ---
