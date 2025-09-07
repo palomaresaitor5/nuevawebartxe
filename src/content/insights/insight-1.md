@@ -1,7 +1,7 @@
 ---
 title: "El Futuro de la Tecnología Web"
 description: "Explora el papel pionero de Artxe Web en la revolución del desarrollo web a través de tecnología avanzada y soluciones innovadoras."
-cardImage: "/imagenes/x.jpg"
+cardImage: "https://artxeweb.com/media/files/disenador-web.svg"
 cardImageAlt: "Vista superior de herramientas de desarrollo web"
 ---
 
