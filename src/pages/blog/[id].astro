@@ -11,39 +11,34 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
 
-// Update getStaticPaths for Spanish posts
+// Generate static paths for Spanish posts (IDs sin prefijo de idioma)
 export async function getStaticPaths() {
-  const blogPosts = await getCollection("blog", ({ id }) => 
-    !id.includes("/") // Get posts without language prefix (Spanish)
-  );
-  return blogPosts.map((post) => {
-    return {
-      params: { id: post.id },
-      props: { post },
-    };
-  });
+  const blogPosts = await getCollection("blog", ({ id }) => !id.includes("/"));
+  return blogPosts.map((post) => ({
+    params: { id: post.id },
+    props: { post },
+  }));
 }
 
-// Get the current post's data
-const { post } = Astro.props;
+// Current post
+const { post } = Astro.props as { post: CollectionEntry<"blog"> };
 
+// All Spanish posts for "related"
 const blogPosts: CollectionEntry<"blog">[] = await getCollection(
   "blog",
-  ({ id }) => !id.includes("/") // Get posts without language prefix (Spanish)
+  ({ id }) => !id.includes("/")
 );
 
-// Filter out the current post to get related posts
-// Note: This is a very basic way of choosing related posts, just for the purpose of the example.
-// In a production site, you might want to implement a more robust algorithm, choosing related posts based on tags, categories, dates, authors, or keywords.
-// See example: https://blog.codybrunner.com/2024/adding-related-articles-with-astro-content-collections/
+// Very basic related posts (excluye el actual)
 const relatedPosts: CollectionEntry<"blog">[] = blogPosts.filter(
   (blogEntry) => blogEntry.id !== post.id
 );
 
+// Meta
 const pageTitle: string = `${post.data.title} | ${SITE.title}`;
-// For the meta description, use the first paragraph of content if available
 const metaDescription =
-  post.data.contents[0] || `Read ${post.data.title} on ScrewFast's blog`;
+  (post.data.contents && post.data.contents[0]) ||
+  `Read ${post.data.title} on ScrewFast's blog`;
 const ogTitle = `${post.data.title} | Blog | ${SITE.title}`;
 ---
 
@@ -55,7 +50,7 @@ const ogTitle = `${post.data.title} | Blog | ${SITE.title}`;
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.data.title,
-    image: post.data.cardImage.src,
+    image: post.data?.cardImage?.src, // usa .src si es ImageMetadata
     datePublished: post.data.pubDate.toISOString(),
     author: {
       "@type": "Person",
@@ -84,8 +79,8 @@ const ogTitle = `${post.data.title} | Blog | ${SITE.title}`;
             <div class="flex items-center justify-between gap-x-2">
               <div>
                 {/* Post metadata and author info */}
-                <a 
-                  href={`/autor/${post.data.author.toLowerCase().replace(/\s+/g, '-')}`}
+                <a
+                  href={`/autor/${post.data.author.toLowerCase().replace(/\s+/g, "-")}`}
                   class="font-bold text-neutral-700 hover:text-orange-400 dark:text-neutral-300 dark:hover:text-orange-300 transition-colors duration-200"
                 >
                   {post.data.author}
@@ -107,71 +102,58 @@ const ogTitle = `${post.data.title} | Blog | ${SITE.title}`;
           </div>
         </div>
       </div>
+
       {/* Blog post title */}
-      <h2
-        class="mb-3 text-2xl font-bold text-neutral-800 md:text-3xl dark:text-neutral-200"
-      >
+      <h2 class="mb-3 text-2xl font-bold text-neutral-800 md:text-3xl dark:text-neutral-200">
         {post.data.title}
       </h2>
-      {/* Blog post contents */}
+
+      {/* Blog post contents: párrafos + imagen principal opcional */}
       <div class="mb-5 space-y-5 md:mb-8 md:space-y-8">
-        {
-          post.data.contents.map((content: string, index: any) =>
-            <a 
-              href={`/tag/${tag.toLowerCase()}`}
+        {post.data.contents?.map((content: string) => (
+          <p class="text-lg text-pretty text-neutral-700 dark:text-neutral-300">
+            {content}
+          </p>
+        ))}
+
+        {post.data?.cardImage && (
+          <img
+            class="w-full rounded-xl object-cover"
+            src={post.data.cardImage.src /* suele ser ImageMetadata */}
+            alt={post.data.cardImageAlt ?? post.data.title}
+            draggable="false"
+            width="800"
+            height="400"
+            loading="lazy"
+            decoding="async"
+          />
+        )}
+      </div>
+
+      <div class="mx-auto grid max-w-(--breakpoint-lg) gap-y-5 sm:flex sm:items-center sm:justify-between sm:gap-y-0">
+        {/* Blog post tags */}
+        <div class="flex flex-wrap gap-x-2 gap-y-1 sm:flex-nowrap sm:items-center sm:gap-y-0">
+          {post.data.tags?.map((tag: string) => (
+            <a
+              href={`/tag/${tag.toLowerCase().replace(/\s+/g, "-")}`}
               class="inline-flex items-center gap-x-1.5 rounded-lg bg-neutral-400/30 px-3 py-1.5 text-xs font-medium text-neutral-700 hover:bg-orange-400/30 hover:text-orange-700 transition-colors duration-200 outline-hidden focus:outline-hidden focus-visible:ring-3 focus-visible:outline-hidden dark:bg-neutral-700/60 dark:text-neutral-300 dark:hover:bg-orange-400/20 dark:hover:text-orange-300"
             >
               {capitalize(tag)}
             </a>
-                  {content}
-                </p>
-                <img
-                  class="w-full rounded-xl object-cover"
-                  src={post.data.cardImage}
-                  alt={post.data.cardImageAlt}
-                  draggable="false"
-                  width="800"
-                  height="400"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </>
-            ) : (
-              <p class="text-lg text-pretty text-neutral-700 dark:text-neutral-300">
-                {content}
-              </p>
-            )
-          )
-        }
-      </div>
-      <div
-        class="mx-auto grid max-w-(--breakpoint-lg) gap-y-5 sm:flex sm:items-center sm:justify-between sm:gap-y-0"
-      >
-        {/* Blog post tags */}
-        <div
-          class="flex flex-wrap gap-x-2 gap-y-1 sm:flex-nowrap sm:items-center sm:gap-y-0"
-        >
-          {
-            post.data.tags?.map((tag: string) => (
-              <span class="inline-flex items-center gap-x-1.5 rounded-lg bg-neutral-400/30 px-3 py-1.5 text-xs font-medium text-neutral-700 outline-hidden focus:outline-hidden focus-visible:ring-3 focus-visible:outline-hidden dark:bg-neutral-700/60 dark:text-neutral-300">
-                {capitalize(tag)}
-              </span>
-            ))
-          }
+          ))}
         </div>
+
         {/* Bookmark and Share buttons */}
         <div class="flex items-center justify-end gap-x-1.5">
           <Bookmark />
-          <div
-            class="mx-3 block h-4 border-e border-neutral-400 dark:border-neutral-500"
-          >
-          </div>
+          <div class="mx-3 block h-4 border-e border-neutral-400 dark:border-neutral-500"></div>
           <div class="inline-flex">
             <SocialShare pageTitle={post.data.title} />
           </div>
         </div>
       </div>
     </div>
+
     <PostFeedback
       title="¿Te ha sido útil este artículo?"
       firstChoice="Sí"
@@ -182,9 +164,7 @@ const ogTitle = `${post.data.title} | Blog | ${SITE.title}`;
   {/* Related articles section */}
   <section class="mx-auto max-w-3xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
     <div class="mb-10 max-w-2xl">
-      <h2
-        class="text-2xl font-bold text-balance text-neutral-800 md:text-4xl md:leading-tight dark:text-neutral-200"
-      >
+      <h2 class="text-2xl font-bold text-balance text-neutral-800 md:text-4xl md:leading-tight dark:text-neutral-200">
         Artículos relacionados
       </h2>
     </div>
