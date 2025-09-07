@@ -1,6 +1,4 @@
 ---
-import mainLogo from "@images/starlight/screwfast_logo_dark.svg?raw";
-import docsLogo from "@images/starlight/docs_logo.svg?raw";
 import type { Props } from "@astrojs/starlight/props";
 
 
@@ -10,8 +8,12 @@ const docs = "/" + locale + "welcome-to-docs/";
 ---
 
 <span class="site-title flex">
-  <a class="main-logo" href={main} set:html={mainLogo} aria-label="ScrewFast" />
-  <a class="docs-logo" href={docs} set:html={docsLogo} aria-label="ScrewFast Docs" />
+  <a class="main-logo" href={main} aria-label="Artxe Web">
+    <img src="/imagenes/artxeweb.svg" alt="Artxe Web" width="96" height="32" />
+  </a>
+  <a class="docs-logo" href={docs} aria-label="Artxe Web Docs">
+    <img src="/imagenes/docs-logo.svg" alt="Docs" width="64" height="32" />
+  </a>
 </span>
 
 <style>

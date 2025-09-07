@@ -1,8 +1,5 @@
 ---
-import { getImage } from "astro:assets";
 import { OG, SEO, SITE } from "@data/constants";
-import faviconSvgSrc from "@images/icon.svg";
-import faviconSrc from "@images/icon.png";
 
 // Default properties for the Meta component. These values are used if props are not provided.
 // 'meta' sets a default description meta tag to describe the page content.
@@ -35,25 +32,7 @@ const URL = `${Astro.site}`; // Set the website URL in astro.config.mjs
 const author = SITE.author;
 const canonical = Astro.url.href;
 const basePath = Astro.url.pathname;
-const socialImageRes = await getImage({
-  src: OG.image,
-  width: 1200,
-  height: 600,
-});
-const socialImage = Astro.url.origin + socialImageRes.src; // Get the full URL of the image (https://stackoverflow.com/a/9858694)
-
-// Generate and optimize the favicon images
-const faviconSvg = await getImage({
-  src: faviconSvgSrc,
-  format: "svg",
-});
-
-const appleTouchIcon = await getImage({
-  src: faviconSrc,
-  width: 180,
-  height: 180,
-  format: "png",
-});
+const socialImage = Astro.url.origin + "/imagenes/social.jpg";
 ---
 
 {/*  Inject structured data into the page if provided. This data is formatted as JSON-LD, a method recommended by Google for structured data pass:
@@ -86,7 +65,7 @@ const appleTouchIcon = await getImage({
 <meta property="og:image" content={socialImage} />
 <meta content="1200" property="og:image:width" />
 <meta content="600" property="og:image:height" />
-<meta content="image/png" property="og:image:type" />
+<meta content="image/jpeg" property="og:image:type" />
 
 {/* Twitter Meta Tags */}
 <meta name="twitter:card" content="summary_large_image" />
@@ -103,9 +82,9 @@ const appleTouchIcon = await getImage({
 
 {/* Links for favicons */}
 <link href="/favicon.ico" rel="icon" sizes="any" type="image/x-icon" />
-<link href={faviconSvg.src} rel="icon" type="image/svg+xml" sizes="any" />
+<link href="/imagenes/icon.svg" rel="icon" type="image/svg+xml" sizes="any" />
 <meta name="mobile-web-app-capable" content="yes" />
-<link href={appleTouchIcon.src} rel="apple-touch-icon" />
-<link href={appleTouchIcon.src} rel="shortcut icon" />
+<link href="/imagenes/icon-180.png" rel="apple-touch-icon" />
+<link href="/imagenes/icon-180.png" rel="shortcut icon" />
 {/* Set theme color */}
 <meta name="theme-color" content="#facc15" />

@@ -1,4 +1,3 @@
-import ogImageSrc from "@images/social.png";
 
 export const SITE = {
   title: "Artxe Web",
@@ -35,7 +34,7 @@ export const OG = {
   url: SITE.url,
   title: `${SITE.title}: Diseño Web Profesional`,
   description: "Diseño y desarrollo de páginas web modernas, rápidas y optimizadas para SEO. Creamos sitios web que convierten visitantes en clientes.",
-  image: ogImageSrc,
+  image: "/imagenes/social.jpg",
 };
 
 export const partnersData = [

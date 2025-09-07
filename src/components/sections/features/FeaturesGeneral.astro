@@ -1,6 +1,5 @@
 ---
 // Import the necessary dependencies
-import { Image } from "astro:assets";
 import IconBlock from "@components/ui/blocks/IconBlock.astro";
 import Icon from "@components/ui/icons/Icon.astro";
 
@@ -22,36 +21,22 @@ interface Props {
 
 // Define props from Astro
 const { title, subTitle, src, alt, features, width, height } = Astro.props;
-const isImported = src && typeof src !== "string";
 ---
 
 <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full">
   <!-- Block to display the feature image -->
   <div class="relative mb-6 overflow-hidden md:mb-8">
     {src && alt && (
-      isImported ? (
-        /* Import local: Astro infiere dimensiones */
-        <Image
-          src={src}
-          alt={alt}
-          class="h-full w-full object-cover object-center"
-          draggable={"false"}
-          format={"avif"}
-          loading={"eager"}
-        />
-      ) : (
-        /* Ruta pública/CDN: usa <img> con dimensiones */
-        <img
-          src={src as string}
-          alt={alt}
-          width={width}
-          height={height}
-          class="h-full w-full object-cover object-center"
-          draggable="false"
-          loading="eager"
-          decoding="async"
-        />
-      )
+      <img
+        src={src}
+        alt={alt}
+        width={width || 800}
+        height={height || 600}
+        class="h-full w-full object-cover object-center"
+        draggable="false"
+        loading="eager"
+        decoding="async"
+      />
     )}
   </div>
 

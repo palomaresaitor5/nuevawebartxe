@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
 import ReviewComponent from "@components/ui/blocks/ReviewComponent.astro";
@@ -45,8 +44,6 @@ const {
   width,
   height,
 } = Astro.props;
-
-const isImported = src && typeof src !== "string";
 ---
 
 <section
@@ -85,29 +82,16 @@ const isImported = src && typeof src !== "string";
   <div class="flex w-full">
     <div class="top-12 overflow-hidden">
       {src && alt && (
-        isImported ? (
-          /* Import local (Astro infiere dimensiones) */
-          <Image
-            src={src}
-            alt={alt}
-            class="h-full w-full scale-100 object-cover object-center"
-            draggable={"false"}
-            loading={"eager"}
-            format={"avif"}
-          />
-        ) : (
-          /* Ruta pública o URL string: requiere width/height */
-          <img
-            src={src}
-            alt={alt}
-            width={width}
-            height={height}
-            class="h-full w-full scale-100 object-cover object-center"
-            draggable="false"
-            loading="eager"
-            decoding="async"
-          />
-        )
+        <img
+          src={src}
+          alt={alt}
+          width={width || 800}
+          height={height || 600}
+          class="h-full w-full scale-100 object-cover object-center"
+          draggable="false"
+          loading="eager"
+          decoding="async"
+        />
       )}
     </div>
   </div>

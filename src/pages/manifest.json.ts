@@ -1,47 +1,33 @@
 import type { APIRoute, ImageMetadata } from "astro";
-import { getImage } from "astro:assets";
-import icon from "@images/icon.png";
-import maskableIcon from "@images/icon-maskable.png";
 
-interface Favicon {
-  purpose: 'any' | 'maskable' | 'monochrome';
-  src: ImageMetadata;
-  sizes: number[];
-}
-
-const sizes = [192, 512];
-const favicons: Favicon[] = [
-  {
-    purpose: 'any',
-    src: icon,
-    sizes,
-  },
-  {
-    purpose: 'maskable',
-    src: maskableIcon,
-    sizes,
-   },
-];
 
 export const GET: APIRoute = async () => {
-  const icons = await Promise.all(
-    favicons.flatMap((favicon) =>
-      favicon.sizes.map(async (size) => {
-        const image = await getImage({
-          src: favicon.src,
-          width: size,
-          height: size,
-          format: "png",
-        });
-        return {
-          src: image.src,
-          sizes: `${image.options.width}x${image.options.height}`,
-          type: `image/${image.options.format}`,
-          purpose: favicon.purpose,
-        };
-      }),
-    ),
-  );
+  const icons = [
+    {
+      src: "/imagenes/icon-192.png",
+      sizes: "192x192",
+      type: "image/png",
+      purpose: "any",
+    },
+    {
+      src: "/imagenes/icon-512.png",
+      sizes: "512x512",
+      type: "image/png",
+      purpose: "any",
+    },
+    {
+      src: "/imagenes/icon-maskable-192.png",
+      sizes: "192x192",
+      type: "image/png",
+      purpose: "maskable",
+    },
+    {
+      src: "/imagenes/icon-maskable-512.png",
+      sizes: "512x512",
+      type: "image/png",
+      purpose: "maskable",
+    },
+  ];
 
   const manifest = {
     short_name: "ScrewFast",
