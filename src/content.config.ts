@@ -66,7 +66,7 @@ const blogCollection = defineCollection({
   title: z.string(),
   description: z.string(),
   contents: z.array(z.string()),
-  author: z.string(),
+  author: z.string().default("Artxe Web"),
   role: z.string().optional(),
   authorImage: image(),
   authorImageAlt: z.string(),
@@ -91,11 +91,53 @@ const insightsCollection = defineCollection({
 
 const projectsCollection = defineCollection({
   loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/projects" }),
-  schema: ({ image }) => z.object ({
-  title: z.string(),
-  description: z.string(),
-  cardImage: image(),
-  cardImageAlt: z.string(),
+  schema: ({ image }) => z.object({
+    title: z.string(),
+    description: z.string(),
+    main: z.object({
+      id: z.number(),
+      content: z.string(),
+      imgCard: z.string(),
+      imgMain: z.string(),
+      imgAlt: z.string(),
+    }),
+    tabs: z.array(
+      z.object({
+        id: z.string(),
+        dataTab: z.string(),
+        title: z.string(),
+      })
+    ),
+    longDescription: z.object({
+      title: z.string(),
+      subTitle: z.string(),
+      btnTitle: z.string(),
+      btnURL: z.string(),
+    }),
+    descriptionList: z.array(
+      z.object({
+        title: z.string(),
+        subTitle: z.string(),
+      })
+    ),
+    specificationsLeft: z.array(
+      z.object({
+        title: z.string(),
+        subTitle: z.string(),
+      })
+    ),
+    specificationsRight: z.array(
+      z.object({
+        title: z.string(),
+        subTitle: z.string(),
+      })
+    ).optional(),
+    blueprints: z.object({
+      first: z.string().optional(),
+      second: z.string().optional(),
+    }),
+    cardImage: z.string(),
+    cardImageAlt: z.string(),
   }),
 });
 

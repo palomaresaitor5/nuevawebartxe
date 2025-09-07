@@ -1,6 +1,57 @@
 ---
 title: "Página Web para Albañiles y Constructores"
 description: "Diseño web robusto para albañiles que muestra experiencia en construcción, proyectos realizados y genera confianza en servicios de albañilería."
+main:
+  id: 2
+  content: |
+    Presentamos nuestro proyecto especializado para albañiles y constructores - una solución web robusta que refleja la solidez y confiabilidad de estos maestros constructores, diseñada para mostrar experiencia, proyectos realizados y generar confianza en servicios de albañilería.
+  imgCard: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=300&fit=crop"
+  imgMain: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=600&fit=crop"
+  imgAlt: "Albañil profesional trabajando en construcción moderna"
+tabs:
+  - id: "tabs-with-card-item-1"
+    dataTab: "#tabs-with-card-1"
+    title: "Descripción"
+  - id: "tabs-with-card-item-2"
+    dataTab: "#tabs-with-card-2"
+    title: "Características"
+  - id: "tabs-with-card-item-3"
+    dataTab: "#tabs-with-card-3"
+    title: "Resultados"
+longDescription:
+  title: "Solución Web Sólida para Albañiles"
+  subTitle: |
+    Nuestro proyecto para albañiles está diseñado para transmitir solidez, durabilidad y confiabilidad, con galerías impactantes de proyectos y herramientas especializadas para el sector de la construcción.
+  btnTitle: "Solicitar proyecto similar"
+  btnURL: "/contacto"
+descriptionList:
+  - title: "Diseño Sólido y Confiable"
+    subTitle: "Estética robusta con texturas de ladrillo, concreto y piedra, combinadas with colores tierra que transmiten estabilidad y conexión con materiales de construcción."
+  - title: "Galería de Proyectos Impactante"
+    subTitle: "Galerías interactivas que muestran transformación de espacios, proceso constructivo paso a paso y diferentes tipos de materiales utilizados."
+  - title: "Herramientas Especializadas"
+    subTitle: "Calculadora de materiales, estimador de tiempos y sistema de presupuestación online para proyectos de albañilería."
+specificationsLeft:
+  - title: "Tecnología Constructiva"
+    subTitle: "Desarrollado con tecnologías robustas que reflejan la solidez del trabajo de albañilería, optimizado para mostrar proyectos de construcción."
+  - title: "SEO Especializado"
+    subTitle: "Optimizado para términos como 'albañil [ciudad]', 'construcción de muros', 'reforma integral' y 'ampliación de vivienda'."
+  - title: "Showcasing de Proyectos"
+    subTitle: "Sistema especializado para mostrar antes y después, proceso constructivo y diferentes tipos de trabajos realizados."
+  - title: "Certificaciones y Experiencia"
+    subTitle: "Secciones dedicadas para mostrar años de experiencia, formación especializada y colaboraciones profesionales."
+specificationsRight:
+  - title: "Servicios Destacados"
+    subTitle: "Construcción residencial, trabajos comerciales, restauración y patrimonio, con galerías específicas para cada especialidad."
+  - title: "Garantías y Seguros"
+    subTitle: "Destacamos garantías de trabajos, seguros profesionales y testimonios sobre durabilidad de proyectos realizados."
+  - title: "Resultados Constructivos"
+    subTitle: "Aumento promedio del 170% en solicitudes de presupuesto y 160% de incremento en proyectos contratados."
+  - title: "Presencia Digital Sólida"
+    subTitle: "Posicionamiento destacado para búsquedas relacionadas con construcción y reformas en áreas de servicio."
+blueprints:
+  first: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop"
+  second: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop"
 cardImage: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop"
 cardImageAlt: "Albañil profesional trabajando en construcción moderna"
 ---

@@ -1,14 +1,14 @@
 ---
 title: "Maximizando la Eficiencia con las Herramientas de Vanguardia de Artxe Web"
 description: "Innovando la Eficiencia en Construcción Web con Herramientas de Precisión y Soporte"
-author: "Jacob"
-authorImage: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
-authorImageAlt: "Descripción del Avatar"
+author: "Artxe Web"
+authorImage: "https://artxeweb.com/media/files/disenador-web.svg"
+authorImageAlt: "Logo de Artxe Web"
 pubDate: 2024-02-06
 cardImage: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&h=400&fit=crop"
 cardImageAlt: "Vista superior de herramientas de desarrollo web"
 readTime: 4
-tags: ["herramientas", "desarrollo", "flujo de trabajo"]
+tags: ["herramientas", "desarrollo", "flujo-de-trabajo", "eficiencia", "web"]
 contents: [
         "En la industria del desarrollo web de hoy en día, donde todo va muy rápido, la eficiencia es clave para el éxito. En Artxe Web, entendemos la importancia de optimizar el flujo de trabajo de tu proyecto para cumplir con los plazos y mantenerse dentro del presupuesto. Por eso estamos emocionados de presentar nuestras herramientas de vanguardia diseñadas para potenciar tus proyectos como nunca antes.",
         "Nuestra gama de herramientas de desarrollo combina ingeniería de precisión con diseño centrado en el usuario, asegurando máxima productividad en cada proyecto. Desde frameworks modernos hasta soluciones de optimización avanzadas, las herramientas de Artxe Web están construidas para resistir las exigencias del desarrollo web mientras optimizan tu flujo de trabajo.",

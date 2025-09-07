@@ -1,6 +1,57 @@
 ---
 title: "Página Web para Electricistas Profesionales"
 description: "Diseño web especializado para electricistas que genera confianza, muestra certificaciones y facilita la contratación de servicios eléctricos."
+main:
+  id: 3
+  content: |
+    Presentamos nuestro proyecto especializado para electricistas profesionales - una solución web que destaca la experiencia, certificaciones y confiabilidad de estos profesionales del sector eléctrico, diseñada para generar confianza y facilitar la contratación de servicios eléctricos.
+  imgCard: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=400&h=300&fit=crop"
+  imgMain: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop"
+  imgAlt: "Electricista profesional trabajando con herramientas modernas"
+tabs:
+  - id: "tabs-with-card-item-1"
+    dataTab: "#tabs-with-card-1"
+    title: "Descripción"
+  - id: "tabs-with-card-item-2"
+    dataTab: "#tabs-with-card-2"
+    title: "Características"
+  - id: "tabs-with-card-item-3"
+    dataTab: "#tabs-with-card-3"
+    title: "Resultados"
+longDescription:
+  title: "Solución Web Profesional para Electricistas"
+  subTitle: |
+    Nuestro proyecto para electricistas está diseñado para transmitir seguridad y profesionalidad, con funcionalidades especializadas para el sector eléctrico y optimización para búsquedas de emergencia.
+  btnTitle: "Solicitar proyecto similar"
+  btnURL: "/contacto"
+descriptionList:
+  - title: "Diseño que Transmite Seguridad"
+    subTitle: "Paleta de colores con azul eléctrico, amarillo de seguridad y grises industriales, con iconografía especializada del sector eléctrico."
+  - title: "Funcionalidades Especializadas"
+    subTitle: "Calculadora de presupuestos online, sistema de emergencias 24/7 y galería de trabajos organizados por tipo: residencial, comercial e industrial."
+  - title: "Certificaciones y Credenciales"
+    subTitle: "Secciones dedicadas para mostrar licencias profesionales, certificaciones vigentes y afiliaciones a colegios profesionales."
+specificationsLeft:
+  - title: "Optimización para Emergencias"
+    subTitle: "SEO local especializado para búsquedas como 'electricista urgente [ciudad]' y 'electricista certificado cerca de mí'."
+  - title: "Servicios Especializados"
+    subTitle: "Secciones para instalaciones fotovoltaicas, domótica y hogar inteligente, y servicios industriales de alta tensión."
+  - title: "Generación de Confianza"
+    subTitle: "Sistema de testimonios, garantías de trabajos y cobertura de seguros profesionales claramente destacados."
+  - title: "Integración Google My Business"
+    subTitle: "Conexión completa con perfil de Google My Business para maximizar visibilidad en búsquedas locales."
+specificationsRight:
+  - title: "Tecnología Eléctrica"
+    subTitle: "Desarrollado con tecnologías que reflejan la precisión y seguridad del trabajo eléctrico profesional."
+  - title: "Funcionalidades de Emergencia"
+    subTitle: "Sistemas de contacto de emergencia prominentes con formularios que se envían directamente al móvil del electricista."
+  - title: "Resultados Comprobados"
+    subTitle: "Aumento promedio del 200% en llamadas de servicio y 180% de incremento en solicitudes de presupuesto online."
+  - title: "Posicionamiento Dominante"
+    subTitle: "Posicionamiento destacado para búsquedas de emergencia eléctrica en áreas de servicio local."
+blueprints:
+  first: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&h=400&fit=crop"
+  second: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&h=400&fit=crop"
 cardImage: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&h=400&fit=crop"
 cardImageAlt: "Electricista profesional trabajando con herramientas modernas"
 ---

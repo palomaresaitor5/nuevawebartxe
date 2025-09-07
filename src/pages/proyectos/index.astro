@@ -2,7 +2,8 @@
 // Importing necessary components
 import MainLayout from "@/layouts/MainLayout.astro";
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
-import CardInsight from "@components/ui/cards/CardInsight.astro";
+import CardSmall from "@components/ui/cards/CardSmall.astro";
+import CardWide from "@components/ui/cards/CardWide.astro";
 import FeaturesStatsAlt from "@components/sections/features/FeaturesStatsAlt.astro";
 import TestimonialsSectionAlt from "@components/sections/testimonials/TestimonialsSectionAlt.astro";
 
@@ -11,10 +12,14 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
 
-// Fetching all the project related content
-const projectEntries = await getCollection("projects", ({ id }) => {
+// Fetching all the project related content and sorting it by main.id
+const project: CollectionEntry<"projects">[] = (
+  await getCollection("projects", ({ id }) => {
   return !id.includes("/"); // Get projects without language prefix (Spanish)
-});
+})).sort(
+  (a: CollectionEntry<"projects">, b: CollectionEntry<"projects">) =>
+    a.data.main.id - b.data.main.id
+);
 
 // Define variables for page content
 const title: string = "Nuestros Proyectos";
@@ -101,15 +106,18 @@ const ogTitle = "Proyectos Web Especializados | Artxe Web";
       <PrimaryCTA title="Historias de Clientes" url="#testimonials" noArrow={true} />
     </div>
     
-    {/* Projects grid using CardInsight component similar to insights */}
-    <section class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {/* Displaying projects in alternating styles. Alternative project gets different card styling.
+    Maps through all project entries and displays them with either CardSmall or CardWide based on their position. */}
+    <section class="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
       {
-        projectEntries.map((projectEntry) => (
-          <CardInsight 
-            insightEntry={projectEntry} 
-            label="Ver Proyecto"
-          />
-        ))
+        project.map((project, index) => {
+          const position = index % 4;
+          if (position === 0 || position === 3) {
+            return <CardSmall product={project} />;
+          } else {
+            return <CardWide product={project} />;
+          }
+        })
       }
     </section>
   </div>

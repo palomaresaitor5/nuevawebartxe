@@ -1,0 +1,114 @@
+---
+// Import necessary components and utilities
+import MainLayout from "@/layouts/MainLayout.astro";
+import CardBlog from "@components/ui/cards/CardBlog.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { SITE } from "@data/constants";
+import { capitalize } from "@utils/utils";
+
+export async function getStaticPaths() {
+  const blogPosts = await getCollection("blog", ({ id }) => 
+    !id.includes("/") // Get posts without language prefix (Spanish)
+  );
+  
+  // Get all unique tags
+  const allTags = blogPosts.flatMap(post => post.data.tags || []);
+  const uniqueTags = [...new Set(allTags)];
+  
+  return uniqueTags.map((tag) => {
+    const tagPosts = blogPosts.filter(post => 
+      post.data.tags?.includes(tag)
+    );
+    return {
+      params: { tag: tag.toLowerCase() },
+      props: { tag, posts: tagPosts },
+    };
+  });
+}
+
+const { tag, posts } = Astro.props;
+
+const pageTitle: string = `Artículos sobre ${capitalize(tag)} | ${SITE.title}`;
+const metaDescription = `Descubre todos los artículos sobre ${capitalize(tag)} en el blog de ${SITE.title}. Contenido especializado en diseño web, SEO y desarrollo.`;
+const ogTitle = `Tag: ${capitalize(tag)} | Blog | ${SITE.title}`;
+---
+
+<MainLayout
+  title={pageTitle}
+  customDescription={metaDescription}
+  customOgTitle={ogTitle}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `https://artxeweb.com/tag/${tag.toLowerCase()}`,
+    url: `https://artxeweb.com/tag/${tag.toLowerCase()}`,
+    name: `Artículos sobre ${capitalize(tag)}`,
+    description: metaDescription,
+    about: {
+      "@type": "Thing",
+      name: capitalize(tag),
+    },
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: posts.length,
+      itemListElement: posts.map((post: CollectionEntry<"blog">, index: number) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "BlogPosting",
+          headline: post.data.title,
+          description: post.data.description,
+          url: `https://artxeweb.com/blog/${post.id}`,
+        },
+      })),
+    },
+    isPartOf: {
+      "@type": "WebSite",
+      url: "https://artxeweb.com",
+      name: SITE.title,
+      description: SITE.description,
+    },
+    inLanguage: "es",
+  }}
+>
+  <section
+    class="mx-auto max-w-[85rem] space-y-8 px-4 pt-16 sm:px-6 lg:px-8 2xl:max-w-full"
+  >
+    {/* Page header */}
+    <div class="mx-auto max-w-3xl text-left sm:text-center">
+      <div class="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-6 dark:bg-orange-900/20">
+        <svg class="w-8 h-8 text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+        </svg>
+      </div>
+      
+      <h1
+        class="block text-4xl font-bold tracking-tight text-balance text-neutral-800 md:text-5xl lg:text-6xl dark:text-neutral-200"
+      >
+        Artículos sobre {capitalize(tag)}
+      </h1>
+
+      <p
+        class="mt-4 text-lg text-pretty text-neutral-600 dark:text-neutral-400"
+      >
+        Explora {posts.length} artículo{posts.length !== 1 ? 's' : ''} relacionado{posts.length !== 1 ? 's' : ''} con {capitalize(tag)}. Contenido especializado para ayudarte a mejorar tus conocimientos en diseño web y desarrollo.
+      </p>
+      
+      <div class="mt-6 flex items-center justify-center space-x-4 text-sm text-neutral-500">
+        <span>{posts.length} artículo{posts.length !== 1 ? 's' : ''}</span>
+        <span>•</span>
+        <span>Tag: {capitalize(tag)}</span>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+    {/* Blog posts grid */}
+    <div class="grid gap-6 lg:grid-cols-2">
+      {posts.map((blogEntry: CollectionEntry<"blog">) => <CardBlog blogEntry={blogEntry} />)}
+    </div>
+  </section>
+</MainLayout>

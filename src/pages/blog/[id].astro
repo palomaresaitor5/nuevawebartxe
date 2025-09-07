@@ -84,9 +84,12 @@ const ogTitle = `${post.data.title} | Blog | ${SITE.title}`;
             <div class="flex items-center justify-between gap-x-2">
               <div>
                 {/* Post metadata and author info */}
-                <span class="font-bold text-neutral-700 dark:text-neutral-300">
+                <a 
+                  href={`/autor/${post.data.author.toLowerCase().replace(/\s+/g, '-')}`}
+                  class="font-bold text-neutral-700 hover:text-orange-400 dark:text-neutral-300 dark:hover:text-orange-300 transition-colors duration-200"
+                >
                   {post.data.author}
-                </span>
+                </a>
                 <ul class="text-xs text-neutral-500">
                   <li
                     class="relative inline-block pe-6 before:absolute before:end-2 before:top-1/2 before:size-1 before:-translate-y-1/2 before:rounded-full before:bg-neutral-300 last:pe-0 last-of-type:before:hidden dark:text-neutral-400 dark:before:bg-neutral-600"
@@ -96,7 +99,7 @@ const ogTitle = `${post.data.title} | Blog | ${SITE.title}`;
                   <li
                     class="relative inline-block pe-6 before:absolute before:end-2 before:top-1/2 before:size-1 before:-translate-y-1/2 before:rounded-full before:bg-neutral-300 last:pe-0 last-of-type:before:hidden dark:text-neutral-400 dark:before:bg-neutral-600"
                   >
-                    {post.data.readTime} min read
+                    {post.data.readTime} min de lectura
                   </li>
                 </ul>
               </div>
@@ -114,9 +117,12 @@ const ogTitle = `${post.data.title} | Blog | ${SITE.title}`;
       <div class="mb-5 space-y-5 md:mb-8 md:space-y-8">
         {
           post.data.contents.map((content: string, index: any) =>
-            index === 1 ? (
-              <>
-                <p class="text-lg text-pretty text-neutral-700 dark:text-neutral-300">
+            <a 
+              href={`/tag/${tag.toLowerCase()}`}
+              class="inline-flex items-center gap-x-1.5 rounded-lg bg-neutral-400/30 px-3 py-1.5 text-xs font-medium text-neutral-700 hover:bg-orange-400/30 hover:text-orange-700 transition-colors duration-200 outline-hidden focus:outline-hidden focus-visible:ring-3 focus-visible:outline-hidden dark:bg-neutral-700/60 dark:text-neutral-300 dark:hover:bg-orange-400/20 dark:hover:text-orange-300"
+            >
+              {capitalize(tag)}
+            </a>
                   {content}
                 </p>
                 <img
@@ -167,8 +173,8 @@ const ogTitle = `${post.data.title} | Blog | ${SITE.title}`;
       </div>
     </div>
     <PostFeedback
-      title="Was this post helpful?"
-      firstChoice="Yes"
+      title="¿Te ha sido útil este artículo?"
+      firstChoice="Sí"
       secondChoice="No"
     />
   </section>
@@ -179,7 +185,7 @@ const ogTitle = `${post.data.title} | Blog | ${SITE.title}`;
       <h2
         class="text-2xl font-bold text-balance text-neutral-800 md:text-4xl md:leading-tight dark:text-neutral-200"
       >
-        Related articles
+        Artículos relacionados
       </h2>
     </div>
 

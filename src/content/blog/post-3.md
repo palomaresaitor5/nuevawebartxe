@@ -1,15 +1,15 @@
 ---
 title: "Simplifica la Adquisición y Mantente Dentro del Presupuesto con Artxe Web"
 description: "Herramientas asequibles y duraderas para proyectos de desarrollo eficientes"
-author: "Olga Zabegina"
-role: "Gerente de Marketing Estratégico"
-authorImage: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face"
-authorImageAlt: "Descripción del Avatar"
+author: "Artxe Web"
+role: "Equipo de Desarrollo"
+authorImage: "https://artxeweb.com/media/files/disenador-web.svg"
+authorImageAlt: "Logo de Artxe Web"
 pubDate: 2024-02-18
 cardImage: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&h=400&fit=crop"
 cardImageAlt: "Vista lateral de trabajador usando herramientas digitales"
 readTime: 3
-tags: ["adquisición", "asequible", "eficiencia"]
+tags: ["adquisicion", "asequible", "eficiencia", "presupuesto", "desarrollo"]
 contents: [
         "Gestionar un proyecto de desarrollo puede ser abrumador, especialmente cuando se trata de adquisición. Por eso Artxe Web está comprometido a simplificar el proceso y mantener tus proyectos dentro del presupuesto.",
         "Con nuestra línea de herramientas y equipos asequibles, puedes encontrar todo lo que necesitas sin quebrar el banco. Nuestro diseño centrado en el usuario asegura que nuestros productos sean fáciles de usar, ahorrándote tiempo y frustración en el sitio de trabajo.",

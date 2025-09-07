@@ -1,14 +1,14 @@
 ---
 title: "Mejorando la Seguridad y la Artesanía con los Servicios de Desarrollo de Artxe Web"
 description: "Servicios de desarrollo web de calidad para resultados duraderos"
-author: "Brad"
-authorImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
-authorImageAlt: "Descripción del Avatar"
+author: "Artxe Web"
+authorImage: "https://artxeweb.com/media/files/disenador-web.svg"
+authorImageAlt: "Logo de Artxe Web"
 pubDate: 2024-02-10
 cardImage: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&h=400&fit=crop"
 cardImageAlt: "Desarrollador trabajando en código con múltiples pantallas"
 readTime: 5
-tags: ["seguridad", "artesanía", "gestión"]
+tags: ["seguridad", "artesania", "gestion", "desarrollo", "calidad"]
 contents: [
         "Cuando se trata de desarrollo web, la seguridad y la calidad del trabajo son innegociables. En Artxe Web, estamos orgullosos de ofrecer una gama de servicios de desarrollo que priorizan ambos, asegurando que tus proyectos estén construidos para durar.",
         "Nuestro equipo de artesanos especializados aporta precisión y experiencia a cada trabajo, desde instalaciones menores hasta trabajo estructural a gran escala. Con herramientas y materiales de alta calidad de nuestro extenso inventario, garantizamos los más altos estándares de seguridad y artesanía en cada proyecto.",
