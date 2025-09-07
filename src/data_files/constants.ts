@@ -30,7 +30,7 @@ export const SEO = {
 };
 
 export const OG = {
-  locale: "es_ES",
+  locale: "es",
   type: "website",
   url: SITE.url,
   title: `${SITE.title}: Diseño Web Profesional`,

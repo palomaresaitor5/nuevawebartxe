@@ -17,13 +17,10 @@ declare global {
 // This gets the static paths for all the unique products
 
 export async function getStaticPaths() {
-  const productEntries = await getCollection("products", ({ id }) =>
-    id.startsWith("en/")
-  );
+  const productEntries = await getCollection("products");
   return productEntries.map((product) => {
-    const idWithoutLang = product.id.replace(/^en\//, ""); // Remove the "en/" prefix
     return {
-      params: { id: idWithoutLang },
+      params: { id: product.id },
       props: { product },
     };
   });
@@ -33,7 +30,7 @@ const { product } = Astro.props;
 
 const pageTitle: string = `${product.data.title} | ${SITE.title}`;
 const metaDescription = product.data.description;
-const ogTitle = `${product.data.title} | Hardware Tools | ScrewFast`;
+const ogTitle = `${product.data.title} | Herramientas de Hardware | Artxe Web`;
 ---
 
 <MainLayout
@@ -43,12 +40,12 @@ const ogTitle = `${product.data.title} | Hardware Tools | ScrewFast`;
   structuredData={{
     "@context": "https://schema.org",
     "@type": "Product",
-    "@id": `https://screwfast.uk/products/${product.data.title.toLowerCase().replace(/\s+/g, "-")}`,
+    "@id": `https://artxeweb.com/proyectos/${product.data.title.toLowerCase().replace(/\s+/g, "-")}`,
     name: product.data.title,
     description: product.data.description,
     brand: {
       "@type": "Brand",
-      name: "ScrewFast",
+      name: "Artxe Web",
     },
   }}
 >

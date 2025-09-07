@@ -21,22 +21,22 @@ export default defineConfig({
       // https://starlight.astro.build/guides/sidebar/
       sidebar: [
         {
-          label: "Guías de Inicio Rápido",
+          label: "Guías",
           autogenerate: { directory: "guides" },
         },
         {
-          label: "Herramientas y Equipos",
+          label: "Herramientas",
           items: [
-            { label: "Guías de Herramientas", link: "tools/tool-guides/" },
-            { label: "Cuidado de Equipos", link: "tools/equipment-care/" },
+            { label: "Guías de Herramientas", link: "/tools/tool-guides/" },
+            { label: "Cuidado de Equipos", link: "/tools/equipment-care/" },
           ],
         },
         {
-          label: "Servicios de Construcción",
+          label: "Servicios",
           autogenerate: { directory: "construction" },
         },
         {
-          label: "Temas Avanzados",
+          label: "Avanzado",
           autogenerate: { directory: "advanced" },
         },
       ],

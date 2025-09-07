@@ -12,15 +12,14 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
 
-// Update getStaticPaths for English posts
+// Update getStaticPaths for Spanish posts
 export async function getStaticPaths() {
-  const blogPosts = await getCollection("blog", ({ id }) =>
-    id.startsWith("en/")
+  const blogPosts = await getCollection("blog", ({ id }) => 
+    !id.includes("/") // Get posts without language prefix (Spanish)
   );
   return blogPosts.map((post) => {
-    const idWithoutLang = post.id.replace(/^en\//, ""); // Remove the "en/" prefix
     return {
-      params: { id: idWithoutLang },
+      params: { id: post.id },
       props: { post },
     };
   });
@@ -31,7 +30,7 @@ const { post } = Astro.props;
 
 const blogPosts: CollectionEntry<"blog">[] = await getCollection(
   "blog",
-  ({ id }) => id.startsWith("en/")
+  ({ id }) => !id.includes("/") // Get posts without language prefix (Spanish)
 );
 
 // Filter out the current post to get related posts
